@@ -9,6 +9,9 @@ public interface UserServiceInterface {
 
     ResponseEntity<Object> getAll();
 
-//    ResponseEntity<Object> getOneAddress(Long id);
+    ResponseEntity<Object> getOneUserById(Long id);
+
+    ResponseEntity<Object> getOneAddressById(Long id);
+
 
 }

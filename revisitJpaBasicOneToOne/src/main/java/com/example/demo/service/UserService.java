@@ -22,15 +22,13 @@ public class UserService implements UserServiceInterface {
         Object responseData;
         HttpStatus status;
 
-        boolean idExist = userRepo.findAll().stream().map(a -> a.getId()).collect(Collectors.toList()).contains(user.getId());
-
-        if(idExist){
+        if (dataExists(user.getId())) {
 
             responseData = "Data already Present";
 
             status = HttpStatus.CONFLICT;
 
-        }else{
+        } else {
 
             responseData = userRepo.save(user);
 
@@ -38,11 +36,60 @@ public class UserService implements UserServiceInterface {
 
         }
 
-        return new ResponseEntity<>(responseData,status);
+        return new ResponseEntity<>(responseData, status);
     }
 
     @Override
     public ResponseEntity<Object> getAll() {
         return new ResponseEntity<>(userRepo.findAll(), HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Object> getOneAddressById(Long userId) {
+        Object responseData;
+        HttpStatus status;
+
+        if (dataExists(userId)) {
+
+            responseData = userRepo.findById(userId).get().getAddress();
+
+            status = HttpStatus.OK;
+
+        } else {
+
+            responseData = "USER ID IS NOT VALID";
+
+            status = HttpStatus.NOT_FOUND;
+
+        }
+
+        return new ResponseEntity<>(responseData, status);
+    }
+
+    @Override
+    public ResponseEntity<Object> getOneUserById(Long userId) {
+        Object responseData;
+        HttpStatus status;
+
+        if (dataExists(userId)) {
+
+            responseData = userRepo.findById(userId);
+
+            status = HttpStatus.OK;
+
+        } else {
+
+            responseData = "USER ID IS NOT VALID";
+
+            status = HttpStatus.NOT_FOUND;
+
+        }
+
+        return new ResponseEntity<>(responseData, status);
+    }
+
+    private boolean dataExists(Long id) {
+        return userRepo.findAll().stream().map(a -> a.getId()).collect(Collectors.toList()).contains(id);
+    }
+
 }

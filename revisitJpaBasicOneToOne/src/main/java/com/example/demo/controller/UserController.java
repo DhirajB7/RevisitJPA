@@ -15,15 +15,22 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<Object> addUser(@RequestBody User user){
-        System.out.println("===========================");
-        System.out.println(user.toString());
-        System.out.println("===========================");
         return userService.addUser(user);
     }
 
     @GetMapping
     public ResponseEntity<Object> getAllUsers(){
         return userService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getUserByUserId(@PathVariable("id") Long id){
+        return userService.getOneUserById(id);
+    }
+
+    @GetMapping("/{id}/address")
+    public ResponseEntity<Object> getAddressByUserId(@PathVariable("id") Long id){
+        return userService.getOneAddressById(id);
     }
 
 }
