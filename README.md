@@ -11,4 +11,6 @@
 - Unidirectional & bidirectional.
 - only required endpoints are present.
 - User & Address [Entity,Repo,Controller,service] are for unidirectional one to one mapping.
+- User & Address [Entity,Repo,Controller,service] are for bidirectional one to one mapping.
+- Understand comments in Address Class.
 ---

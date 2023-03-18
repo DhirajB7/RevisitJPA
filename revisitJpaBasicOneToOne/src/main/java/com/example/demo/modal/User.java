@@ -22,7 +22,7 @@ public class User {
     private String email;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="fk_add_id")
+    @JoinColumn(name="fk_add_id")           //foreign  key in current table
     private Address address;
 
 }
