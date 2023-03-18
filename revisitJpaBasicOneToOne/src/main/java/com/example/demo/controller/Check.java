@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "check")
 public class Check {
 	
-	@GetMapping("/")
+	@GetMapping()
 	public ResponseEntity<String> check() {
 		return new ResponseEntity<>("WORKING",HttpStatus.OK);
 	}

@@ -15,21 +15,14 @@ import lombok.ToString;
 public class Address {
 	
 	@Id
-	@Column(name = "user_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "address_id")
 	private Long id;
 	
-	@Column(nullable = false)
 	private String street;
 	
-	@Column(nullable = false)
 	private String city;
 	
-	@Column(nullable = false)
 	private String state;
-
-	@OneToOne
-	@MapsId
-	@JoinColumn(name = "user_id")
-	private User user;
 
 }

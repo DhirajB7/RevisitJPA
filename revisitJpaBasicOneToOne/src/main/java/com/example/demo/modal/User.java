@@ -14,18 +14,15 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
     private String name;
 
     private String email;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)  //mappedBy is entity name starting in lower case
-    @PrimaryKeyJoinColumn
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="fk_add_id")
     private Address address;
 
-    public User(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
 }
