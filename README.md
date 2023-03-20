@@ -14,3 +14,11 @@
 - User & Address [Entity,Repo,Controller,service] are for bidirectional one to one mapping.
 - Understand comments in Address Class.
 ---
+## Project - revisitJpaBasicOneToMany
+- Implimentation of OneToMany.
+- Smilar to OneToOne unidirectional, but @joinColumn has 2 params.
+- Insted of Entity List Of Entity is refered.
+- In table placement of Forgin Key is in "many" entities' table's row. [ I know it was not easy to read ]  
+- User & Address [Entity,Repo,Controller,service] are for one to many mapping.
+----
+
