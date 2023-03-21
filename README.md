@@ -21,4 +21,7 @@
 - In table placement of Forgin Key is in "many" entities' table's row. [ I know it was not easy to read ]  
 - User & Address [Entity,Repo,Controller,service] are for one to many mapping.
 ----
-
+## Project - relearnspringboot-main
+- Implimentation of Basics of SB
+- General exception details, logs, etc
+---
