@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "application.message",
+    "type": "java.lang.String",
+    "description": "A description for 'application.message'"
+  },
+  {
+    "name": "student.alreadyPresent",
+    "type": "java.lang.String",
+    "description": "A description for 'student.alreadyPresent'"
+  },
+  {
+    "name": "student.notFound",
+    "type": "java.lang.String",
+    "description": "A description for 'student.notFound'"
+  },
+  {
+    "name": "student.notFound",
+    "type": "java.lang.String",
+    "description": "A description for 'student.notFound'"
+  },
+  {
+    "name": "student.notFound",
+    "type": "java.lang.String",
+    "description": "A description for 'student.notFound'"
+  },
+  {
+    "name": "student.notFound",
+    "type": "java.lang.String",
+    "description": "A description for 'student.notFound'"
+  }
+]}
